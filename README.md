@@ -26,13 +26,13 @@ conda activate m2clip
 
 ## Configuration
 
-Some common configurations, such as dataset paths and pretrained backbone paths, are set in `configs/config.py`. Feel free to set the required fields to your own paths and parameters.
+Some common configurations, such as dataset paths and pretrained backbone paths, are set in `configs/config.py`. You can just set the required fields to your own paths and parameters.
 
 ## Dataset Preparation
-follow the dataset preparation instructions in the original [M2CLIP](https://github.com/sallymmx/m2clip) repository. This replicate uses the Kinetics-400 dataset.
+Follow the dataset preparation instructions in the original [M2CLIP](https://github.com/sallymmx/m2clip) repository. This replicate uses the Kinetics-400 dataset.
 
 ## Backbone
-This replicate uses the CLIP-ViT-B/12 from official release. You can download the [CLIP-ViT-B/16](https://github.com/openai/CLIP/blob/a9b1bf5920416aaeaec965c25dd9e8f98c864f16/clip/clip.py#L30) 
+This replicate uses the CLIP-ViT-B/12 from the official release. You can download the [CLIP-ViT-B/16](https://github.com/openai/CLIP/blob/a9b1bf5920416aaeaec965c25dd9e8f98c864f16/clip/clip.py#L30) 
 
 ## Training and Evaluation
 For training, run the following command:
@@ -54,7 +54,7 @@ This project is based on the original [M2CLIP](https://github.com/sallymmx/m2cli
 The checkpoints are saved in the `checkpoints` folder. You can download the checkpoints from the official repository.
 
 ## Training Conditions and Results
-This replicate uses a single RTX4080 GPU for training. The model is trained With 32 batch size(which is 36 in original project) and 12 epochs. Because of the restricted VRAM on my GPU, the training using video data is sampled with 8 frames, and the spatial & temporal vies are set to 1 for both instead of 4 & 3 in original project, Which may lead to the performance drop.
+This replicate uses a single RTX4080 GPU for training. The model is trained with 32 batch size(36 in original project) and 12 epochs. Because of the restricted VRAM on my GPU, the training using video data is sampled with 8 frames, and the spatial & temporal views are set to 1 for both instead of 4 & 3 in the original project, which may lead to the performance drop.
 
 **The final result for this replicate is as follows: Acc@1: 68.67%, Acc@5: 88.05%**
 
